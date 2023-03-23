@@ -1,0 +1,76 @@
+{
+	"name": "multi-signature-wallet",
+	"author": "ABossOfMyself",
+	"license": "MIT",
+	"version": "1.0.0",
+	"keywords": [
+		"ethereum",
+		"react",
+		"uniswap",
+		"workspaces",
+		"yarn"
+	],
+	"private": true,
+	"scripts": {
+		"react-app:build": "yarn workspace multi-signature-wallet-frontend build --max-old-space-size=12288",
+		"react-app:eject": "yarn workspace multi-signature-wallet-frontend eject",
+		"react-app:start": "yarn workspace multi-signature-wallet-frontend start",
+		"react-app:test": "yarn workspace multi-signature-wallet-frontend test",
+		"build": "yarn workspace multi-signature-wallet-frontend build --max-old-space-size=12288",
+		"prettier": "yarn workspace multi-signature-wallet-frontend prettier",
+		"chain": "yarn workspace multi-signature-wallet-hardhat chain",
+		"fork": "yarn workspace multi-signature-wallet-hardhat fork",
+		"node": "yarn workspace multi-signature-wallet-hardhat chain",
+		"test": "yarn workspace multi-signature-wallet-hardhat test",
+		"start": "yarn workspace multi-signature-wallet-frontend start",
+		"compile": "yarn workspace multi-signature-wallet-hardhat compile",
+		"deploy": "yarn workspace multi-signature-wallet-hardhat deploy",
+		"verify": "yarn workspace multi-signature-wallet-hardhat verify",
+		"watch": "yarn workspace multi-signature-wallet-hardhat watch",
+		"accounts": "yarn workspace multi-signature-wallet-hardhat accounts",
+		"balance": "yarn workspace multi-signature-wallet-hardhat balance",
+		"send": "yarn workspace multi-signature-wallet-hardhat send",
+		"ipfs": "yarn workspace multi-signature-wallet-frontend ipfs",
+		"surge": "yarn workspace multi-signature-wallet-frontend surge",
+		"s3": "yarn workspace multi-signature-wallet-frontend s3",
+		"ship": "yarn workspace multi-signature-wallet-frontend ship",
+		"generate": "yarn workspace multi-signature-wallet-hardhat generate",
+		"account": "yarn workspace multi-signature-wallet-hardhat account",
+		"mineContractAddress": "cd packages-hardhat && npx hardhat mineContractAddress",
+		"wallet": "cd packages-hardhat && npx hardhat wallet",
+		"fundedwallet": "cd packages-hardhat && npx hardhat fundedwallet",
+		"flatten": "cd packages-hardhat && npx hardhat flatten",
+		"clean": "cd packages-hardhat && npx hardhat clean",
+		"run-graph-node": "yarn workspace multi-signature-wallet-services run-graph-node",
+		"remove-graph-node": "yarn workspace multi-signature-wallet-services remove-graph-node",
+		"clean-graph-node": "yarn workspace multi-signature-wallet-services clean-graph-node",
+		"graph-codegen": "yarn workspace multi-signature-wallet-subgraph graph codegen",
+		"graph-build": "yarn workspace multi-signature-wallet-subgraph graph build",
+		"graph-create-local": "yarn workspace multi-signature-wallet-subgraph graph create --node http://localhost:8020/ scaffold-eth/your-contract",
+		"graph-remove-local": "yarn workspace multi-signature-wallet-subgraph graph remove --node http://localhost:8020/ scaffold-eth/your-contract",
+		"graph-deploy-local": "yarn workspace multi-signature-wallet-subgraph graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 scaffold-eth/your-contract",
+		"graph-ship-local": "yarn graph-codegen && yarn graph-build --network localhost && yarn graph-deploy-local",
+		"deploy-and-graph": "yarn deploy && yarn graph-ship-local",
+		"theme": "yarn workspace multi-signature-wallet-frontend theme",
+		"watch-theme": "yarn workspace multi-signature-wallet-frontend watch",
+		"postinstall": "husky install",
+		"backend": "cd packages/backend && node server"
+	},
+	"workspaces": {
+		"packages": [
+			"packages/*"
+		],
+		"nohoist": [
+			"**/@graphprotocol/graph-ts",
+			"**/@graphprotocol/graph-ts/**",
+			"**-hardhat",
+			"**-hardhat/**",
+			"**-hardhat-ts",
+			"**-hardhat-ts/**"
+		]
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"husky": "^7.0.2"
+	}
+}
